@@ -1,6 +1,5 @@
 var vows = require('vows');
 var assert = require('assert');
-var util = require('util');
 var OpenPaaSStrategy = require('../lib/passport-openpaas/strategy');
 
 
@@ -29,7 +28,7 @@ vows.describe('OpenPaaSStrategy').addBatch({
       function() {});
       
       strategy._oauth2.getProtectedResource = function(url, accessToken, callback) {
-        var body = '{ "username": "chamerling", "id": 1, "name": "christophe hamerling" }';
+        var body = '{ "_id": "123", "firstname": "foo", "lastname": "bar", "emails": ["foo@bar.com"] }';
         
         callback(null, body, undefined);
       };
@@ -54,9 +53,9 @@ vows.describe('OpenPaaSStrategy').addBatch({
       },
       'should load profile' : function(err, profile) {
         assert.equal(profile.provider, 'openpaas');
-        assert.equal(profile.id, '1');
-        assert.equal(profile.username, 'chamerling');
-        assert.equal(profile.displayName, 'christophe hamerling');
+        assert.equal(profile.id, '123');
+        assert.equal(profile.username, 'foo@bar.com');
+        assert.equal(profile.displayName, 'foo bar');
       },
       'should set raw property' : function(err, profile) {
         assert.isString(profile._raw);
