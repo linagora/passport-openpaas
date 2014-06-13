@@ -1,0 +1,27 @@
+{
+  "name": "passport-openpaas",
+  "version": "0.0.1",
+  "description": "OpenPaaS OAuth authentication strategy for Passport.",
+  "author": "Linagora Folks",
+  "repository": {
+    "type": "git",
+    "url": "http://ci-openpaas.linagora.com/stash/scm/or/passport-openpaas.git"
+  },
+  "main": "./lib/passport-openpaas",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "0.1.x"
+  },
+  "devDependencies": {
+    "vows": "0.7.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows --verbose test/*-test.js"
+  },
+  "engines": { "node": ">= 0.4.0" },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "keywords": ["passport", "openpaas", "auth", "authn", "authentication", "identity"]
+}
