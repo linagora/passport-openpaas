@@ -1,3 +1,5 @@
+![Archived](https://img.shields.io/badge/Current_Status-archived-blue?style=flat)
+
 # Passport-OpenPaaS
 
 [Passport](http://passportjs.org/) strategy for authenticating with OpenPaaS using OAuth2.
